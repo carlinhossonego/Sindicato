@@ -39,14 +39,15 @@
                 <div id="logo" class="fl_left"> 
 
 
-                    <img src="imagens/LOGO_p.png" alt="some text" width=100 height=500> 
-
-                    <h1 class="logoname">SINDICATO</h1>
+                    <img src="imagens/LOGO_p.png" alt="some text" width=100 height=500>
+                    <h1 class="logoname" ><%out.print(request.getAttribute("nome_menu"));%></h1>
+                    <h1>SINDICATO - USUÁRIO PRINCIPAL</h1>
                     <h1>PESQUISAR EMPRESA</h1>
+                    
                 </div>
                 <nav id="mainav" class="fl_right"> 
                     <ul class="clear">
-                        <li><a href="principal.html">Início</a>
+                        <li><a href="principal">Início</a>
                         </li>
                         <li><a class="drop" href="#">Associados</a>
                             <ul>
@@ -56,24 +57,34 @@
                         </li>
                         <li><a class="drop" href="#">Empresas</a>
                             <ul>
-                                <li><a href="empresa.jsp">Adicionar</a></li>
+                                <li><a href="empresa456">Adicionar</a></li>
                                 <li><a href="abrirempresa">Listar</a></li>
                             </ul>
                         </li>
                         <li><a class="drop" href="#">Usuarios</a>
                             <ul>
-                                <li><a href="novo_user.jsp">Adicionar</a></li>
+                                <li><a href="novo_user456">Adicionar</a></li>
                                 <li><a href="novousuario">Listar</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Relatórios</a>
+                        <li><a href="relatoriosroot">Relatórios</a>
                         </li>
-                        <li><a href="index.html">Sair</a>
+                        <li><a href="sair">Sair</a>
                         </li>
                     </ul>
                 </nav>
             </header>
         </div>
+        <form name="frmPesquisaempresa" action="pesquisaparaempresa">
+            <table borde="1">
+                <tr>
+                    <td><input name="pesquisar" type="text" placeholder="Digite o Nome da Empresa" class="Caixa_Contato"/></td>
+                    <td><input type="button" value="Pesquisar" class="Botao1"
+                               onclick="validarPesquisaempresa()"></td>
+                </tr>
+            </table>
+        </form>
+
         <table id="tabela">
 
             <thead>

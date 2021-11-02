@@ -14,7 +14,7 @@
         <br/>
         <br/>
         <br/>
-        <form name="frmLogin" action="main">
+        <form name="frmLogincliente" action="main5">
             <table class="tabela2">
                 <tr>
                     <td>
@@ -23,7 +23,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <h1 class="logoname">Login</h1>
+                        <h1 class="logoname">DIGITE O LOGIN E SENHA DO CLIENTE</h1>
                     </td>
                 </tr>
                 <tr>
@@ -45,8 +45,8 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td><input type="button" value="Acessar" class="Botao1"
-                   onclick="validarLogin()"></td>
+                    <td><input type="button" value="Salvar" class="Botao1"
+                   onclick="validarLogincliente()"></td>
                 </tr>
             </table>
         </form>
@@ -57,9 +57,8 @@
         <script src="layout/scripts/jquery.backtotop.js"></script>
         <script src="layout/scripts/jquery.mobilemenu.js"></script>
         <script src="scripts/validador.js"></script>
-        
         <footer>
-            EndereÃ§o: Av. da Saudade, 345 - Vila Garavello, Guariba - SP, 14840-000 / Telefone: (16) 3251-5353
+            Endereço: Av. da Saudade, 345 - Vila Garavello, Guariba - SP, 14840-000 / Telefone: (16) 3251-5353
         </footer>
 
     </body>

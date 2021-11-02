@@ -23,7 +23,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <h1 class="logoname">Login</h1>
+                        <h1 class="logoname">DIGITE O LOGIN E SENHA DO CABELEIREIRO</h1>
                     </td>
                 </tr>
                 <tr>

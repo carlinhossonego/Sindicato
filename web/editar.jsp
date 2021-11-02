@@ -1,3 +1,5 @@
+<%@page import="java.time.LocalDate"%>
+<%@page import="java.time.format.DateTimeFormatter"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="modelo.JavaBeansAssociados"%>
 <%@page import="java.util.ArrayList" %>
@@ -39,19 +41,21 @@
             </div>
         </div>
 
+
         <div class="wrapper row1">
             <header id="header" class="hoc clear">
                 <div id="logo" class="fl_left"> 
 
 
                     <img src="imagens/LOGO_p.png" alt="some text" width=100 height=500>
-
-                    <h1 class="logoname">SINDICATO</h1>
+                    <h1 class="logoname" ><%out.print(request.getAttribute("nome_menu"));%></h1>
+                    <h1>SINDICATO - USUÁRIO PRINCIPAL</h1>
                     <h1>EDITAR ASSOCIADO</h1>
+                    
                 </div>
                 <nav id="mainav" class="fl_right"> 
                     <ul class="clear">
-                        <li><a href="principal.html">Início</a>
+                        <li><a href="principal">Início</a>
                         </li>
                         <li><a class="drop" href="#">Associados</a>
                             <ul>
@@ -61,19 +65,19 @@
                         </li>
                         <li><a class="drop" href="#">Empresas</a>
                             <ul>
-                                <li><a href="empresa.jsp">Adicionar</a></li>
+                                <li><a href="empresa456">Adicionar</a></li>
                                 <li><a href="abrirempresa">Listar</a></li>
                             </ul>
                         </li>
                         <li><a class="drop" href="#">Usuarios</a>
                             <ul>
-                                <li><a href="novo_user.jsp">Adicionar</a></li>
+                                <li><a href="novo_user456">Adicionar</a></li>
                                 <li><a href="novousuario">Listar</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Relatórios</a>
+                        <li><a href="relatoriosroot">Relatórios</a>
                         </li>
-                        <li><a href="index.html">Sair</a>
+                        <li><a href="sair">Sair</a>
                         </li>
                     </ul>
                 </nav>
@@ -81,21 +85,22 @@
         </div>
 
 
-        <form name="frmContato" action="update_associado">
+        <form name="frmeditarContato" action="update_associado">
 
             <table>
 
                 <tr>
-                    <td>ID: </td>
-                    <td> <input type="text" name="id" class="Caixa_Id" readonly 
-                                value="<%out.print(request.getAttribute("id"));%>"></td>
+
+                    <td hidden> <input type="text" name="id" class="Caixa_Id" readonly 
+                                       value="<%out.print(request.getAttribute("id"));%>"></td>
 
                 </tr>
 
                 <tr>
-                    <td>NOME: </td>
-                    <td> <input type="text" name="nome" class="Caixa_Nome"
+                    <td>NOME*: </td>
+                    <td> <input type="text" name="nome" id="nome" class="Caixa_Nome"
                                 value="<%out.print(request.getAttribute("nome"));%>"></td>
+                    <td><img src="http://sindmotrope.ddns.net:4000/IMG/<%out.print(request.getAttribute("id"));%>.jpg"></td>
 
                 </tr>
 
@@ -128,9 +133,14 @@
                 </tr>
 
                 <tr>
-                    <td>VALIDADE: </td>
-                    <td> <input type="text" name="validade" class="Caixa_CPF"
-                                value="<%out.print(request.getAttribute("validade"));%>"></td>
+                    <td>VALIDADE*: </td>
+                    <td> <input type="date" name="validade" id="validade" class="Caixa_CPF"
+                                value="<%
+                                    String data;
+                                    data = String.valueOf(request.getAttribute("validade"));
+                                    DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                                    LocalDate Data_do_corte2 = LocalDate.parse(data, formato);
+                                    out.print(Data_do_corte2);%>"></td>
 
                 </tr>
                 <tr>
@@ -139,13 +149,27 @@
                                 value="<%out.print(request.getAttribute("cargo"));%>"></td>
 
                 </tr>
+
+                <tr>
+                    <td>LOGIN*: </td>
+                    <td> <input type="text" name="login" class="Caixa_CPF" id="login"
+                                value="<%out.print(request.getAttribute("login"));%>"></td>
+
+                </tr>
+
+                <tr>
+                    <td>SENHA*: </td>
+                    <td> <input type="text" name="senha" class="Caixa_CPF" id="senha"
+                                value="<%out.print(request.getAttribute("senha"));%>"></td>
+
+                </tr>
                 <tr>
                     <td>DEPENDENTES: </td>
                     <td>
                         <table id="tabela">
                             <thead>
                                 <tr>
-                                   
+
                                     <th>NOME</th>
                                     <th>NASCIMENTO</th>
                                 </tr>
@@ -154,13 +178,14 @@
                             <tbody>
                                 <% for (int i = 0; i < lista.size(); i++) {%>
                                 <tr>
-                                    
-                                    
+
+
                                     <td><%=lista.get(i).getNome()%></td>
                                     <td><%=lista.get(i).getNascimento()%></td>
                                     <td>
                                         <a href="select_dependente?id=<%=lista.get(i).getIddependentes()%>" class="Botao1">Editar</a>
                                     </td>
+
                                 </tr>
                                 <% }%>
                             </tbody>
@@ -177,7 +202,7 @@
             <br>
 
             <input type="button" value="Salvar" class="Botao1"
-                   onclick="validar()">
+                   onclick="validareditar()">
         </form>
 
         <!-- JAVASCRIPTS -->

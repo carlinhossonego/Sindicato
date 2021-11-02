@@ -39,31 +39,34 @@
             </div>
         </div>
 
-        <div class="wrapper row1">
+     <div class="wrapper row1">
             <header id="header" class="hoc clear">
                 <div id="logo" class="fl_left"> 
 
 
+
                     <img src="imagens/LOGO_p.png" alt="some text" width=100 height=500>
-                    <h1 class="logoname">SINDICATO PRESTADOR DE SERVIÇO</h1>
+
+                    <h1 class="logoname2" ><%out.print(request.getAttribute("nome"));%></h1>
+                    <h1>SINDICATO PRESTADOR DE SERVIÇO</h1>
 
 
                 </div>
                 <nav id="mainav" class="fl_right"> 
                     <ul class="clear">
-                        <li><a href="principalempregado.html">Início</a>
+                        <li><a href="principalempregado">Início</a>
                         </li>
                         <li><a href="relatorios">Relatórios</a>
                         </li>
                         <li><a href="listarassociadonoservico">Associados</a>
-
+                        </li>
+                        <li><a href="sair">Sair</a>
                         </li>
 
                     </ul>
                 </nav>
             </header>
         </div>
-
 
         <BR/>
         <BR/>
@@ -92,9 +95,15 @@
                     <td hidden id="data_F">
                         <input  name="DataF1" type="text" placeholder="Digite a Data Final" class="Caixa_Contato" hidden/>
                     </td>
+
                     <td hidden id="pago">
-                        <input  name="Pago1" type="text" placeholder=" " class="Caixa_Contato" hidden/>
+                        <select  name="Pago1" size="1" id="Pago2">
+                            <option value="sim">SIM</option>
+                            <option value="nao">NÃO</option>
+                        </select>
                     </td>
+
+
 
                     <td></td>
                     <td><input type="button" value="Pesquisar" class="Botao1"
@@ -128,9 +137,15 @@
                     <td hidden id="data_F2">
                         <input  name="DataF2" type="text" placeholder="Digite a Data Final" class="Caixa_Contato" />
                     </td>
+
                     <td hidden id="pago2">
-                        <input  name="Pago2" type="text" placeholder=" " class="Caixa_Contato" />
+                        <select  name="Pago2" size="1" id="Pago2">
+                            <option value="sim">SIM</option>
+                            <option value="nao">NÃO</option>
+                        </select>
+                        <!-- <input  name="Pago2" type="text" placeholder=" " class="Caixa_Contato" /> -->
                     </td>
+
 
                     <td></td>
 
@@ -144,7 +159,7 @@
 
             <table>
 
-                
+
                 <tr>
                     <td>
                         <table id="tabela">
@@ -161,14 +176,31 @@
                             <tbody>
                                 <% for (int i = 0; i < lista.size(); i++) {%>
                                 <tr>
+                                    <% String g = String.valueOf(lista.get(i).getPago());%>
+                                    <% if (g.equals("0")) {%>
 
+
+
+                                    <%} else {%>
+
+                                    <td></td>
+                                    <%}%>
 
                                     <td><%=lista.get(i).getAssociado_ID()%></td>
                                     <td><%=lista.get(i).getAssociado_Id_Dependente()%></td>
                                     <td><%=lista.get(i).getData_Corte()%></td>
-                                    <td><%=lista.get(i).getPago()%></td>
+
+
+                                    <% String pg = "SIM";%>
+                                    <%if (lista.get(i).getPago().equals("0")) {%>
+                                    <%pg = "NÃO";%>
+
+                                    <%}%>
+
+                                    <td><%=pg%></td>
                                 </tr>
                                 <% }%>
+
                             </tbody>
                         </table>  
                     </td>

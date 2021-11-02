@@ -40,14 +40,15 @@
                 <div id="logo" class="fl_left"> 
 
 
-                    <img src="imagens/LOGO_p.png" alt="some text" width=100 height=500> 
-
-                    <h1 class="logoname">SINDICATO</h1>
+                    <img src="imagens/LOGO_p.png" alt="some text" width=100 height=500>
+                    <h1 class="logoname" ><%out.print(request.getAttribute("nome_menu"));%></h1>
+                    <h1>SINDICATO - USUÁRIO PRINCIPAL</h1>
                     <h1>CADASTRAR NOVA EMPRESA</h1>
+                    
                 </div>
                 <nav id="mainav" class="fl_right"> 
                     <ul class="clear">
-                        <li><a href="principal.html">Início</a>
+                        <li><a href="principal">Início</a>
                         </li>
                         <li><a class="drop" href="#">Associados</a>
                             <ul>
@@ -57,19 +58,19 @@
                         </li>
                         <li><a class="drop" href="#">Empresas</a>
                             <ul>
-                                <li><a href="empresa.jsp">Adicionar</a></li>
+                                <li><a href="empresa456">Adicionar</a></li>
                                 <li><a href="abrirempresa">Listar</a></li>
                             </ul>
                         </li>
                         <li><a class="drop" href="#">Usuarios</a>
                             <ul>
-                                <li><a href="novo_user.jsp">Adicionar</a></li>
+                                <li><a href="novo_user456">Adicionar</a></li>
                                 <li><a href="novousuario">Listar</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Relatórios</a>
+                        <li><a href="relatoriosroot">Relatórios</a>
                         </li>
-                        <li><a href="index.html">Sair</a>
+                        <li><a href="sair">Sair</a>
                         </li>
                     </ul>
                 </nav>
@@ -83,8 +84,8 @@
 
             <table>
                 <tr>
-                    <td>EMPRESA</td>
-                    <td><input name="nome" type="text" placeholder="EMPRESA" class="Caixa_Cidade"/></td>
+                    <td>EMPRESA*</td>
+                    <td><input name="nome" id="nome" type="text" placeholder="EMPRESA" class="Caixa_Cidade"/></td>
                 </tr>
                 <tr>
                     <td>ENDEREÇO</td>
@@ -96,12 +97,12 @@
                     <td><input name="contato" type="text" placeholder="CONTATO" class="Caixa_Contato"/></td>
                 </tr>
                 <tr>
-                    <td>LOGIN</td>
-                    <td><input type="text" name="login" placeholder="LOGIN" class="Caixa_Nome" /></td>
+                    <td>LOGIN*</td>
+                    <td><input type="text" name="login" id="login" placeholder="LOGIN" class="Caixa_Nome" /></td>
                 </tr>
                 <tr>
-                    <td>SENHA</td>
-                    <td><input name="senha" type="text" placeholder="SENHA" class="Caixa_Contato"/></td>
+                    <td>SENHA*</td>
+                    <td><input name="senha" type="text" id="senha" placeholder="SENHA" class="Caixa_Contato"/></td>
 
                 </tr>
                 <tr>

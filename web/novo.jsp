@@ -42,14 +42,15 @@
                 <div id="logo" class="fl_left"> 
 
 
-                    <img src="imagens/LOGO_p.png" alt="some text" width=100 height=500> 
-
-                    <h1 class="logoname">SINDICATO</h1>
+                    <img src="imagens/LOGO_p.png" alt="some text" width=100 height=500>
+                    <h1 class="logoname" ><%out.print(request.getAttribute("nome_menu"));%></h1>
+                    <h1>SINDICATO - USUÁRIO PRINCIPAL</h1>
                     <h1>CADASTRAR NOVO ASSOCIADO</h1>
+                    
                 </div>
                 <nav id="mainav" class="fl_right"> 
                     <ul class="clear">
-                        <li><a href="principal.html">Início</a>
+                        <li><a href="principal">Início</a>
                         </li>
                         <li><a class="drop" href="#">Associados</a>
                             <ul>
@@ -59,19 +60,19 @@
                         </li>
                         <li><a class="drop" href="#">Empresas</a>
                             <ul>
-                                <li><a href="empresa.jsp">Adicionar</a></li>
+                                <li><a href="empresa456">Adicionar</a></li>
                                 <li><a href="abrirempresa">Listar</a></li>
                             </ul>
                         </li>
                         <li><a class="drop" href="#">Usuarios</a>
                             <ul>
-                                <li><a href="novo_user.jsp">Adicionar</a></li>
+                                <li><a href="novo_user456">Adicionar</a></li>
                                 <li><a href="novousuario">Listar</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Relatórios</a>
+                        <li><a href="relatoriosroot">Relatórios</a>
                         </li>
-                        <li><a href="index.html">Sair</a>
+                        <li><a href="sair">Sair</a>
                         </li>
                     </ul>
                 </nav>
@@ -81,13 +82,14 @@
         <br>
         <form name="frmContato" action="insert_associado">
 
+            <input type="hidden" name="controle" id="controle" value="0">
 
 
             <table class="tabela">
                 <tr>
-                    <td>ID</td>
-                    <td><input name="id" type="text" placeholder="ID" class="Caixa_ID1"  
-                               value="<%out.print(request.getAttribute("id"));%>">  </td>
+
+                    <td hidden><input name="id" type="text" placeholder="ID" class="Caixa_ID" readonly
+                                      value="<%out.print(request.getAttribute("id"));%>">  </td>
                 </tr>
 
                 <tr>
@@ -100,13 +102,10 @@
                     <td><input name="endereco" type="text" placeholder="ENDEREÇO" class="Caixa_Contato"/></td>
                 </tr>
 
+
                 <tr>
-                    <td>DEPENDENTES</td>
-                    <td> <input name="dependentes" type="text" placeholder="QUANTIDADE DE DEPENDENTES" class="Caixa_Contato"/></td>
-                </tr>
-                <tr>
-                    <td>NOME</td>
-                    <td><input type="text" name="nome" placeholder="NOME" class="Caixa_Nome" /></td>
+                    <td>NOME*</td>
+                    <td><input type="text" id="nome" name="nome" placeholder="NOME" class="Caixa_Nome" /></td>
                 </tr>
 
                 <tr>
@@ -124,15 +123,27 @@
                     <td> <input type="text" name="empresa" placeholder="EMPRESA" class="Caixa_Contato"/></td>
                 </tr>
                 <tr>
-                    <td>VALIDADE</td>
-                    <td><input type="text" name="validade" placeholder="VALIDADE" class="Caixa_Validade" /></td>
+                    <td>VALIDADE*</td>
+                    <td><input type="date" id="validade" name="validade" placeholder="VALIDADE" class="Caixa_Validade" /></td>
                 </tr>
+                <tr>
+                    <td>LOGIN*</td>
+                    <td><input type="text" id="login" name="login" placeholder="LOGIN" class="Caixa_Validade" /></td>
+                </tr>
+                <tr>
+                    <td>SENHA*</td>
+                    <td><input type="text" id="senha" name="senha" placeholder="SENHA" class="Caixa_Validade" /></td>
+                </tr>
+
+
             </table>
 
             <br/>
             <input type="button" value="CADASTRAR" class="Botao1"
                    onclick="validar()">    
         </form>
+
+
 
         <!-- JAVASCRIPTS -->
         <script src="layout/scripts/jquery.min.js"></script>

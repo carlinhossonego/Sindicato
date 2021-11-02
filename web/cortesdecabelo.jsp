@@ -59,6 +59,7 @@
                     <td>NOME: </td>
                     <td> <input type="text" name="nome" class="Caixa_Nome" readonly
                                 value="<%out.print(request.getAttribute("nome"));%>"></td>
+                    <td><img src="http://sindmotrope.ddns.net:4000/IMG/<%out.print(request.getAttribute("id"));%>.jpg"></td>
 
                     <td></td>
                 </tr>

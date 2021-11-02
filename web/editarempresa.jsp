@@ -41,14 +41,15 @@
                 <div id="logo" class="fl_left"> 
 
 
-                    <img src="imagens/LOGO_p.png" alt="some text" width=100 height=500> 
-
-                    <h1 class="logoname">SINDICATO</h1>
+                    <img src="imagens/LOGO_p.png" alt="some text" width=100 height=500>
+                    <h1 class="logoname" ><%out.print(request.getAttribute("nome_menu"));%></h1>
+                    <h1>SINDICATO - USUÁRIO PRINCIPAL</h1>
                     <h1>EDITAR EMPRESA</h1>
+                    
                 </div>
                 <nav id="mainav" class="fl_right"> 
                     <ul class="clear">
-                        <li><a href="principal.html">Início</a>
+                        <li><a href="principal">Início</a>
                         </li>
                         <li><a class="drop" href="#">Associados</a>
                             <ul>
@@ -58,19 +59,19 @@
                         </li>
                         <li><a class="drop" href="#">Empresas</a>
                             <ul>
-                                <li><a href="empresa.jsp">Adicionar</a></li>
+                                <li><a href="empresa456">Adicionar</a></li>
                                 <li><a href="abrirempresa">Listar</a></li>
                             </ul>
                         </li>
                         <li><a class="drop" href="#">Usuarios</a>
                             <ul>
-                                <li><a href="novo_user.jsp">Adicionar</a></li>
+                                <li><a href="novo_user456">Adicionar</a></li>
                                 <li><a href="novousuario">Listar</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Relatórios</a>
+                        <li><a href="relatoriosroot">Relatórios</a>
                         </li>
-                        <li><a href="index.html">Sair</a>
+                        <li><a href="sair">Sair</a>
                         </li>
                     </ul>
                 </nav>
@@ -81,15 +82,15 @@
             <table>
 
                 <tr>
-                    <td>ID: </td>
-                    <td> <input type="text" name="id" class="Caixa_Id" readonly 
+                    
+                    <td hidden> <input type="text" name="id" class="Caixa_Id" readonly 
                                 value="<%out.print(request.getAttribute("id"));%>"></td>
 
                 </tr>
 
                 <tr>
-                    <td>NOME: </td>
-                    <td> <input type="text" name="nome" class="Caixa_Nome"
+                    <td>NOME*: </td>
+                    <td> <input type="text" name="nome" id="nome" class="Caixa_Nome"
                                 value="<%out.print(request.getAttribute("nome"));%>"></td>
 
                 </tr>
@@ -109,15 +110,15 @@
                 </tr>
 
                 <tr>
-                    <td>LOGIN: </td>
-                    <td> <input type="text" name="login" class="Caixa_CPF"
+                    <td>LOGIN*: </td>
+                    <td> <input type="text" name="login" id="login" class="Caixa_CPF"
                                 value="<%out.print(request.getAttribute("login"));%>"></td>
 
                 </tr>
 
                 <tr>
-                    <td>SENHA: </td>
-                    <td> <input type="text" name="senha" class="Caixa_CPF"
+                    <td>SENHA*: </td>
+                    <td> <input type="text" name="senha" id="senha" class="Caixa_CPF"
                                 value="<%out.print(request.getAttribute("senha"));%>"></td>
 
                 </tr>

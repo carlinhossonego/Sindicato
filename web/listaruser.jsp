@@ -40,14 +40,14 @@
 
 
                     <img src="imagens/LOGO_p.png" alt="some text" width=100 height=500>
-
-                    <h1 class="logoname">SINDICATO</h1>
+                    <h1 class="logoname" ><%out.print(request.getAttribute("nome_menu"));%></h1>
+                    <h1>SINDICATO - USUÁRIO PRINCIPAL</h1>
                     <h1>PESQUISAR USUÁRIOS</h1>
-
+                    
                 </div>
                 <nav id="mainav" class="fl_right"> 
                     <ul class="clear">
-                        <li><a href="principal.html">Início</a>
+                        <li><a href="principal">Início</a>
                         </li>
                         <li><a class="drop" href="#">Associados</a>
                             <ul>
@@ -57,32 +57,45 @@
                         </li>
                         <li><a class="drop" href="#">Empresas</a>
                             <ul>
-                                <li><a href="empresa.jsp">Adicionar</a></li>
+                                <li><a href="empresa456">Adicionar</a></li>
                                 <li><a href="abrirempresa">Listar</a></li>
                             </ul>
                         </li>
                         <li><a class="drop" href="#">Usuarios</a>
                             <ul>
-                                <li><a href="novo_user.jsp">Adicionar</a></li>
+                                <li><a href="novo_user456">Adicionar</a></li>
                                 <li><a href="novousuario">Listar</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Relatórios</a>
+                        <li><a href="relatoriosroot">Relatórios</a>
                         </li>
-                        <li><a href="index.html">Sair</a>
+                        <li><a href="sair">Sair</a>
                         </li>
                     </ul>
                 </nav>
             </header>
         </div>
+
+        <form name="frmPesquisauser" action="Pesquisauser">
+            <table borde="1">
+                <tr>
+                    <td><input name="pesquisar" type="text" placeholder="Digite o Nome do Usuário" class="Caixa_Contato"/></td>
+                    <td><input type="button" value="Pesquisar" class="Botao1"
+                               onclick="validarPesquisauser()"></td>
+                </tr>
+            </table>
+        </form>
+
+
         <table id="tabela">
 
             <thead>
                 <tr>
                     <th>ID</th>
+                    <th>NOME</th>
                     <th>LOGIN</th>
                     <th>SENHA</th>
-                    <th>NOME</th>
+                    
 
                 </tr>
             </thead>
@@ -90,9 +103,10 @@
                 <% for (int i = 0; i < lista.size(); i++) {%>
                 <tr>
                     <td><%=lista.get(i).getId_user()%></td>
+                    <td><%=lista.get(i).getNome_user()%></td>
                     <td><%=lista.get(i).getLogin_user()%></td>
                     <td><%=lista.get(i).getSenha_user()%></td>
-                    <td><%=lista.get(i).getNome_user()%></td>
+                    
                     <td>
                         <a href="select_user?id=<%=lista.get(i).getId_user()%>" class="Botao1">Editar</a>
                     </td>
@@ -106,5 +120,6 @@
         <script src="layout/scripts/jquery.min.js"></script>
         <script src="layout/scripts/jquery.backtotop.js"></script>
         <script src="layout/scripts/jquery.mobilemenu.js"></script>
+        <script src="scripts/validador.js"></script>
     </body>
 </html>

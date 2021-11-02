@@ -36,24 +36,30 @@
             </div>
         </div>
 
-        <div class="wrapper row1">
+    <div class="wrapper row1">
             <header id="header" class="hoc clear">
                 <div id="logo" class="fl_left"> 
 
 
+
                     <img src="imagens/LOGO_p.png" alt="some text" width=100 height=500>
-                    <h1 class="logoname">SINDICATO PRESTADOR DE SERVIÇO</h1>
+
+                    <h1 class="logoname2" ><%out.print(request.getAttribute("nome"));%></h1>
+                    <h1>SINDICATO PRESTADOR DE SERVIÇO</h1>
 
 
                 </div>
                 <nav id="mainav" class="fl_right"> 
                     <ul class="clear">
-                        <li><a href="principalempregado.html">Início</a>
+                        <li><a href="principalempregado">Início</a>
+                        </li>
+                        <li><a href="relatorios">Relatórios</a>
                         </li>
                         <li><a href="listarassociadonoservico">Associados</a>
-      
                         </li>
-                       
+                        <li><a href="sair">Sair</a>
+                        </li>
+
                     </ul>
                 </nav>
             </header>

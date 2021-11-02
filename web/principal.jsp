@@ -1,20 +1,14 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="modelo.JavaBeansAssociados"%>
-<%@page import="java.util.ArrayList" %>
-<%
-    ArrayList<JavaBeansAssociados> lista = (ArrayList<JavaBeansAssociados>) request.getAttribute("associado");
-%>
-<!DOCTYPE html>
-<html>
+<html lang="">
+
     <head>
-        <meta charset="UTF-8">
-        <title>JSP Page</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+        <title>Sindicato</title>
         <link rel="icon" href="imagens/favicon.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
     </head>
-    <body>
+    <body id="top">
+
         <div class="wrapper overlay row0">
             <div id="topbar" class="hoc clear">
                 <div class="fl_left"> 
@@ -43,13 +37,12 @@
 
                     <img src="imagens/LOGO_p.png" alt="some text" width=100 height=500>
                     <h1 class="logoname" ><%out.print(request.getAttribute("nome_menu"));%></h1>
-                    <h1>SINDICATO - USU√ÅRIO PRINCIPAL</h1>
-                    <h1>PESQUISAR ASSOCIADO</h1>
-                    
+                    <h1>SINDICATO - USU¡RIO PRINCIPAL</h1>
+                
                 </div>
                 <nav id="mainav" class="fl_right"> 
                     <ul class="clear">
-                        <li><a href="principal">In√≠cio</a>
+                        <li><a href="principal">InÌcio</a>
                         </li>
                         <li><a class="drop" href="#">Associados</a>
                             <ul>
@@ -69,7 +62,7 @@
                                 <li><a href="novousuario">Listar</a></li>
                             </ul>
                         </li>
-                        <li><a href="relatoriosroot">Relat√≥rios</a>
+                        <li><a href="relatoriosroot">RelatÛrios</a>
                         </li>
                         <li><a href="sair">Sair</a>
                         </li>
@@ -78,48 +71,9 @@
             </header>
         </div>
 
-        <form name="frmPesquisa" action="main2">
-            <br/>
-            <br/>
-            <table borde="1">
-                <tr>
-                    <td><input name="pesquisar" type="text" placeholder="Digite o Nome" class="Caixa_Contato"/></td>
-                    <td><input type="button" value="Pesquisar" class="Botao1"
-                               onclick="validarPesquisa()"></td>
-                </tr>
-            </table>
-
-            <table id="tabela">
-
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>NOME</th>
-                        <th>EMPRESA</th>
-                        <th>VALIDADE</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <% for (int i = 0; i < lista.size(); i++) {%>
-                    <tr>
-                        <td><%=lista.get(i).getId_associado()%></td>
-                        <td><%=lista.get(i).getNome_associado()%></td>
-                        <td><%=lista.get(i).getEmpresa_associado()%></td>
-                        <td><%=lista.get(i).getValidade_associado()%></td>
-                        <td>
-                            <a href="select_associado?id=<%=lista.get(i).getId_associado()%>" class="Botao1">Editar</a>
-                        </td>
-                    </tr>
-                    <% }%>
-                </tbody>
-            </table>
-        </form>
-
         <!-- JAVASCRIPTS -->
         <script src="layout/scripts/jquery.min.js"></script>
         <script src="layout/scripts/jquery.backtotop.js"></script>
         <script src="layout/scripts/jquery.mobilemenu.js"></script>
-        <script src="scripts/validador.js"></script>
     </body>
 </html>
