@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title></title>
+        <script language="JavaScript">
+            // Variables
+            window.history.forward();
+
+
+            leftposition = (screen.width / 2) - 175
+            topposition = (screen.height / 2) - 90
+            strfiller0 = '<table border="1" cellspacing="0" width="98%"><tr><td><br>' + 'Alert: ' + '<br><hr width="98%"><br>'
+            strfiller1 = '&nbsp;&nbsp;&nbsp;&nbsp; Pode continuar com o corte.' + '<br><br><br></td></tr></table>'
+            temp = strfiller0 + strfiller1
+            // Javascript
+
+
+            function noBack()
+            {
+                window.history.forward();
+            }
+
+            function preview() {
+
+                noBack();
+
+                preWindow = open("", "preWindow", "status=no,toolbar=no,menubar=yes,width=350,height=180,left=" + leftposition + ",top=" + topposition);
+                preWindow.document.open();
+                preWindow.document.write(temp);
+                preWindow.document.close();
+                setTimeout(function () {
+                    document.getElementById("h1").innerHTML = "OBRIGADO";
+                    preWindow.close()
+                }, 4000);
+
+            }
+
+
+
+
+
+        </script>
+    </head>
+    <body onload="preview()">
+        <h1 id="h1"></h1>
+    </body>
+</html>

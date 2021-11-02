@@ -14,7 +14,7 @@
         <br/>
         <br/>
         <br/>
-        <form name="frmLogin" action="main">
+        <form name="frmLogin" action="main4">
             <table class="tabela2">
                 <tr>
                     <td>
@@ -58,7 +58,7 @@
         <script src="layout/scripts/jquery.mobilemenu.js"></script>
         <script src="scripts/validador.js"></script>
         <footer>
-            EndereÃ§o: Av. da Saudade, 345 - Vila Garavello, Guariba - SP, 14840-000 / Telefone: (16) 3251-5353
+            Endereço: Av. da Saudade, 345 - Vila Garavello, Guariba - SP, 14840-000 / Telefone: (16) 3251-5353
         </footer>
 
     </body>

@@ -42,51 +42,34 @@
 
 
                     <img src="imagens/LOGO_p.png" alt="some text" width=100 height=500>
+                    <h1 class="logoname">SINDICATO PRESTADOR DE SERVIÇO</h1>
 
-                    <h1 class="logoname">SINDICATO</h1>
-                    <h1>PESQUISAR ASSOCIADOS</h1>
 
                 </div>
                 <nav id="mainav" class="fl_right"> 
                     <ul class="clear">
-                        <li><a href="principal.html">Início</a>
+                        <li><a href="principalempregado.html">Início</a>
                         </li>
-                        <li><a class="drop" href="#">Associados</a>
-                            <ul>
-                                <li><a href="setid">Adicionar</a></li>
-                                <li><a href="listar">Listar</a></li>
-                            </ul>
+                        <li><a href="listarassociadonoservico">Associados</a>
+      
                         </li>
-                        <li><a class="drop" href="#">Empresas</a>
-                            <ul>
-                                <li><a href="empresa.jsp">Adicionar</a></li>
-                                <li><a href="abrirempresa">Listar</a></li>
-                            </ul>
-                        </li>
-                        <li><a class="drop" href="#">Usuarios</a>
-                            <ul>
-                                <li><a href="novo_user.jsp">Adicionar</a></li>
-                                <li><a href="novousuario">Listar</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="relatoriosroot">Relatórios</a>
-                        </li>
-                        <li><a href="index.html">Sair</a>
-                        </li>
+                       
                     </ul>
                 </nav>
             </header>
         </div>
 
-        <form name="frmPesquisa" action="main2">
+        <form name="frmPesquisa2" action="main3">
             <br/>
             <br/>
             <table borde="1">
                 <tr>
                     <td><input name="pesquisar" type="text" placeholder="Digite o Nome" class="Caixa_Contato"/></td>
                     <td><input type="button" value="Pesquisar" class="Botao1"
-                               onclick="validarPesquisa()"></td>
+                               onclick="validarPesquisa2()"></td>
                 </tr>
+
+
             </table>
 
             <table id="tabela">
@@ -103,12 +86,12 @@
                 <tbody>
                     <% for (int i = 0; i < lista.size(); i++) {%>
                     <tr>
-                        <td><%=lista.get(i).getId_associado()%></td>
+                        <td ><%=lista.get(i).getId_associado()%></td>
                         <td><%=lista.get(i).getNome_associado()%></td>
                         <td><%=lista.get(i).getEmpresa_associado()%></td>
                         <td><%=lista.get(i).getValidade_associado()%></td>
                         <td>
-                            <a href="select_associado?id=<%=lista.get(i).getId_associado()%>" class="Botao1">Editar</a>
+                            <a href="select_associado_corte?id=<%=lista.get(i).getId_associado()%>" class="Botao1">Selecionar</a>
                         </td>
                     </tr>
                     <% }%>

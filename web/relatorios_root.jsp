@@ -1,10 +1,9 @@
-<%@page import="java.time.LocalDate"%>
-<%@page import="java.time.format.DateTimeFormatter"%>
+<%@page import="modelo.JavaBeansRelatorioRoot"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="modelo.JavaBeansAssociados"%>
+<%@page import="modelo.JavaBeansRelatorios"%>
 <%@page import="java.util.ArrayList" %>
 <%
-    ArrayList<JavaBeansAssociados> lista = (ArrayList<JavaBeansAssociados>) request.getAttribute("editar");
+    ArrayList<JavaBeansRelatorioRoot> lista = (ArrayList<JavaBeansRelatorioRoot>) request.getAttribute("relatoriotodo");
 
 %>
 
@@ -19,7 +18,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body> 
+    <body id="top">
+
         <div class="wrapper overlay row0">
             <div id="topbar" class="hoc clear">
                 <div class="fl_left"> 
@@ -47,9 +47,9 @@
 
 
                     <img src="imagens/LOGO_p.png" alt="some text" width=100 height=500>
-
                     <h1 class="logoname">SINDICATO</h1>
-                    <h1>EDITAR ASSOCIADO</h1>
+
+
                 </div>
                 <nav id="mainav" class="fl_right"> 
                     <ul class="clear">
@@ -75,7 +75,7 @@
                         </li>
                         <li><a href="relatoriosroot">Relatórios</a>
                         </li>
-                        <li><a href="index.html">Sair</a>
+                        <li><a href="sair">Sair</a>
                         </li>
                     </ul>
                 </nav>
@@ -83,110 +83,130 @@
         </div>
 
 
-        <form name="frmeditarContato" action="update_associado">
+        <BR/>
+        <BR/>
+        <form name="frmPesquisa4" action="relatorios_para_root">
+            <table >
+                <td>
+                    <label>
+                        Selecione a Empresa
+                    </label>
 
+                </td>
+
+
+                <tr>
+                    <td id="nome">
+                        <input  name="Empresa" type="text" placeholder="Digite a Empresa" class="Caixa_Contato" />
+                    </td>
+
+                    <td>
+                        <input type="button" value="Pesquisar" class="Botao1" onclick="validarPesquisa4()">
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td id="select2"> 
+                        <select name="E_OU" size="1" id="campo2">
+                            <option value="-">-</option>
+                            <option value="E">E</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td hidden id="select3">
+                        <select  name="campo3" size="1" id="campo3">
+                            <option value="c">-</option>
+                            <option value="data2">Data</option>
+                            <option value="pago2">Pago</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td hidden id="data_I2">
+                        <input  name="DataI2" type="date" placeholder="Digite a Data Inicial" class="Caixa_Contato" />
+                    </td>
+                    <td hidden id="data_F2">
+                        <input  name="DataF2" type="date" placeholder="Digite a Data Final" class="Caixa_Contato" />
+                    </td>
+                    <td hidden id="pago2">
+                        <select  name="Pago2" size="1" id="Pago2">
+                            <option value="sim">SIM</option>
+                            <option value="nao">NÃO</option>
+                        </select>
+                        <!-- <input  name="Pago2" type="text" placeholder=" " class="Caixa_Contato" /> -->
+                    </td>
+
+                    <td></td>
+
+
+
+
+                </tr>
+
+
+            </table>
+        </form>
+        <form name="fazer_pagamento" action="pagamento">
             <table>
 
-                <tr>
-
-                    <td hidden> <input type="text" name="id" class="Caixa_Id" readonly 
-                                       value="<%out.print(request.getAttribute("id"));%>"></td>
-
-                </tr>
 
                 <tr>
-                    <td>NOME*: </td>
-                    <td> <input type="text" name="nome" id="nome" class="Caixa_Nome"
-                                value="<%out.print(request.getAttribute("nome"));%>"></td>
-                    <td><img src="imagens/LOGO_p.png"></td>
-
-                </tr>
-
-                <tr>
-                    <td>ENDEREÇO: </td>
-                    <td> <input type="text" name="endereco"  class="Caixa_Telefone"
-                                value="<%out.print(request.getAttribute("endereco"));%>"></td>
-
-                </tr>
-
-                <tr>
-                    <td>TELEFONE: </td>
-                    <td> <input type="text" name="telefone" class="Caixa_CPF"
-                                value="<%out.print(request.getAttribute("telefone"));%>"></td>
-
-                </tr>
-
-                <tr>
-                    <td>EMPRESA: </td>
-                    <td> <input type="text" name="empresa" class="Caixa_CPF"
-                                value="<%out.print(request.getAttribute("empresa"));%>"></td>
-
-                </tr>
-
-                <tr>
-                    <td>CIDADE: </td>
-                    <td> <input type="text" name="cidade" class="Caixa_CPF"
-                                value="<%out.print(request.getAttribute("cidade"));%>"></td>
-
-                </tr>
-
-                <tr>
-                    <td>VALIDADE*: </td>
-                    <td> <input type="date" name="validade" id="validade" class="Caixa_CPF"
-                                value="<%
-                                    String data;
-                                    data = String.valueOf(request.getAttribute("validade"));
-                                    DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-                                    LocalDate Data_do_corte2 = LocalDate.parse(data, formato);
-                                    out.print(Data_do_corte2);%>"></td>
-
-                </tr>
-                <tr>
-                    <td>CARGO: </td>
-                    <td> <input type="text" name="cargo" class="Caixa_CPF"
-                                value="<%out.print(request.getAttribute("cargo"));%>"></td>
-
-                </tr>
-                <tr>
-                    <td>DEPENDENTES: </td>
                     <td>
                         <table id="tabela">
                             <thead>
                                 <tr>
-
-                                    <th>NOME</th>
-                                    <th>NASCIMENTO</th>
+                                    <th></th>
+                                    <th>CÓDIGO</th>
+                                    <th>EMPRESA</th>
+                                    <th>ASSOCIADO</th>
+                                    <th>DEPENDENTE</th>
+                                    <th>DATA DO CORTE</th>
+                                    <th>PAGO</th>
                                 </tr>
                             </thead>
 
                             <tbody>
                                 <% for (int i = 0; i < lista.size(); i++) {%>
                                 <tr>
+                                    <% String g = String.valueOf(lista.get(i).getPago());%>
+                                    <% if (g.equals("0")) {%>
 
+                                    <td><input type="checkbox" name="ID" id="selecao" value="<%=lista.get(i).getID_cortes()%>"></td>
 
-                                    <td><%=lista.get(i).getNome()%></td>
-                                    <td><%=lista.get(i).getNascimento()%></td>
-                                    <td>
-                                        <a href="select_dependente?id=<%=lista.get(i).getIddependentes()%>" class="Botao1">Editar</a>
-                                    </td>
+                                    <%} else {%>
 
+                                    <td></td>
+                                    <%}%>
+
+                                    <td><%=lista.get(i).getID_cortes()%></td>
+                                    <td><%=lista.get(i).getNomeempresa()%></td>
+                                    <td><%=lista.get(i).getAssociado_ID()%></td>
+                                    <td><%=lista.get(i).getAssociado_Id_Dependente()%></td>
+                                    <td><%=lista.get(i).getData_Corte()%></td>
+
+                                    <% String pg = "SIM";%>
+                                    <%if (lista.get(i).getPago().equals("0")) {%>
+                                    <%pg = "NÃO";%>
+
+                                    <%}%>
+
+                                    <td><%=pg%></td>
                                 </tr>
                                 <% }%>
                             </tbody>
                         </table>  
                     </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><a href="setid2" class="Botao1">Adicionar Dependente</a></td>
-                </tr>
 
+                </tr>
             </table>
-            <br>
-            <br>
+            <input type="button" value="Finalizar" class="Botao1" onclick="fazerpagamento()">
 
-            <input type="button" value="Salvar" class="Botao1"
-                   onclick="validareditar()">
+            <br>
+            <br>
         </form>
 
         <!-- JAVASCRIPTS -->
@@ -195,4 +215,5 @@
         <script src="layout/scripts/jquery.mobilemenu.js"></script>
         <script src="scripts/validador.js"></script>
     </body>
+
 </html>

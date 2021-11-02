@@ -1,15 +1,15 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="modelo.JavaBeansAssociados"%>
 
 
 
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <title>Controle de pessoas</title>
-
-        <link rel="icon" href="imagens/favicon.png"> 
-        <link rel="stylesheet" href="style.css">
+        <title>Novo Dependente</title>
+        <link rel="icon" href="imagens/favicon.png">
         <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+        <link rel="stylesheet" href="style.css">
 
 
         <meta charset="UTF-8">
@@ -45,7 +45,7 @@
                     <img src="imagens/LOGO_p.png" alt="some text" width=100 height=500> 
 
                     <h1 class="logoname">SINDICATO</h1>
-                    <h1>CADASTRAR NOVO USUÁRIO</h1>
+                    <h1>CADASTRAR NOVO DEPENDENTE</h1>
                 </div>
                 <nav id="mainav" class="fl_right"> 
                     <ul class="clear">
@@ -79,33 +79,55 @@
         </div>
 
         <br>
-        <form name="frmNovo_User" action="insert_user">
+        <form name="frmnovodependente" action="insert_dependente">
 
 
 
-            <table>
+            <table class="tabela">
                 <tr>
-                    <td>NOME*:</td>
+                    <td>NOVO DEPENDENTE</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+               
+                <tr>
+                    <td>ID</td>
+                    <td><input name="id" type="text" placeholder="ID" class="Caixa_ID1"  readonly
+                               value="<%out.print(request.getAttribute("id"));%>">  </td>
+                </tr>
+
+                <tr>
+                    <td>NOME*</td>
                     <td><input name="nome" id="nome" type="text" placeholder="NOME" class="Caixa_Cidade"/></td>
                 </tr>
 
                 <tr>
-                    <td>LOGIN*:</td>
-                    <td><input name="login" id="login" type="text"  placeholder="LOGIN" class="Caixa_Contato"/></td>
+                    <td>DATA DE NASCIMENTO*</td>
+                    <td><input name="nascimento" id="nascimento" type="date" placeholder="NASCIMENTO" class="Caixa_Contato"/></td>
                 </tr>
 
-                <tr>
-                    <td>SENHA*:</td>
-                    <td><input name="senha" id="senha" type="text"  placeholder="SENHA" class="Caixa_Contato"/></td>
-                </tr>
 
             </table>
-            <p>&nbsp;</p>
-            <p>&nbsp;</p>
 
+            <br/>
+            <input type="button" value="CADASTRAR" class="Botao1"
+                   onclick="validarNovoDependente()">   
         </form>
-        <input type="button" value="Cadastrar" class="Botao1"
-               onclick="validarUser()">
 
         <!-- JAVASCRIPTS -->
         <script src="layout/scripts/jquery.min.js"></script>

@@ -1,14 +1,19 @@
-<html lang="">
-
+<%@page import="modelo.JavaBeansServicos"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="modelo.JavaBeansAssociados"%>
+<%@page import="java.util.ArrayList" %>
+<%
+    ArrayList<JavaBeansServicos> lista = (ArrayList<JavaBeansServicos>) request.getAttribute("servicos");
+%>
+<html>
     <head>
-        <title>Sindicato</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
         <link rel="icon" href="imagens/favicon.png">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="style.css">
         <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
     </head>
-    <body id="top">
-
+    <body>
         <div class="wrapper overlay row0">
             <div id="topbar" class="hoc clear">
                 <div class="fl_left"> 
@@ -36,44 +41,61 @@
 
 
                     <img src="imagens/LOGO_p.png" alt="some text" width=100 height=500>
-                    <h1 class="logoname">SINDICATO</h1>
+                    <h1 class="logoname">SINDICATO PRESTADOR DE SERVIÇO</h1>
 
 
                 </div>
                 <nav id="mainav" class="fl_right"> 
                     <ul class="clear">
-                        <li><a href="principal.html">Início</a>
+                        <li><a href="principalempregado.html">Início</a>
                         </li>
-                        <li><a class="drop" href="#">Associados</a>
-                            <ul>
-                                <li><a href="setid">Adicionar</a></li>
-                                <li><a href="listar">Listar</a></li>
-                            </ul>
+                        <li><a href="listarassociadonoservico">Associados</a>
+
                         </li>
-                        <li><a class="drop" href="#">Empresas</a>
-                            <ul>
-                                <li><a href="empresa.jsp">Adicionar</a></li>
-                                <li><a href="abrirempresa">Listar</a></li>
-                            </ul>
-                        </li>
-                        <li><a class="drop" href="#">Usuarios</a>
-                            <ul>
-                                <li><a href="novo_user.jsp">Adicionar</a></li>
-                                <li><a href="novousuario">Listar</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="relatoriosroot">Relatórios</a>
-                        </li>
-                        <li><a href="sair">Sair</a>
-                        </li>
+
                     </ul>
                 </nav>
             </header>
         </div>
 
+
+        <table id="tabela">
+
+            <thead>
+                <tr>
+
+                    <th>NOME DO DEPENDENTE</th>
+                    <th>DATA DO CORTE</th>
+                    <th>NOME DA EMPRESA</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <% for (int i = 0; i < lista.size(); i++) {%>
+                <tr>
+
+                    <td><%=lista.get(i).getAssociado_id()%></td>
+                    <td><%=lista.get(i).getAssociado_iddependentes()%></td>
+                    <td><%=lista.get(i).getData_corte()%></td>
+
+
+                </tr>
+                <% }%>
+            </tbody>
+
+
+
+
+        </table>
+        <table>
+            <tr> 
+                <td> <a href="login_de_corte.jsp">Executar Corte</a></td>
+            </tr>
+        </table>
         <!-- JAVASCRIPTS -->
         <script src="layout/scripts/jquery.min.js"></script>
         <script src="layout/scripts/jquery.backtotop.js"></script>
         <script src="layout/scripts/jquery.mobilemenu.js"></script>
+        <script src="scripts/validador.js"></script> 
     </body>
 </html>
