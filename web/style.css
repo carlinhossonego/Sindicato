@@ -17,30 +17,19 @@ footer {
     line-height: 100px;
 }
 
-.tabela3{
-    font-size: 15pt;
-    font-weight: 100px;
-    background-color: #0F8A5F;
-    margin: auto;
-    
-
-}
-
-
-
 .tabela{
     font-size: 15pt;
     font-weight: 100px;
     background-color: #0F8A5F;
     margin: auto; 
-
+   
 }
 tr,td{
     font-size: 14pt;
     background-color: #333333;
     color: #CCCCCC;
-
-
+  
+    
 }
 .tabela2{
     font-size: 15pt;
@@ -86,14 +75,7 @@ tr,td{
     border-radius: 5px;
 
 }
-.Caixa_Id_menor{
-    width: 80px;
-    padding: 5px;
-    margin-bottom: 10px;
-    border-color: #ddd;
-    border-radius: 5px;
-    color: #000000;
-}
+
 .Caixa_Nome {
     width: 400px;
     padding: 5px;

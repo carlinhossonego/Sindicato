@@ -67,7 +67,7 @@
                                 <li><a href="novousuario">Listar</a></li>
                             </ul>
                         </li>
-                        <li><a href="relatoriosroot">Relatórios</a>
+                        <li><a href="#">Relatórios</a>
                         </li>
                         <li><a href="index.html">Sair</a>
                         </li>
@@ -75,27 +75,14 @@
                 </nav>
             </header>
         </div>
-
-        <form name="frmPesquisauser" action="Pesquisauser">
-            <table borde="1">
-                <tr>
-                    <td><input name="pesquisar" type="text" placeholder="Digite o Nome do Usuário" class="Caixa_Contato"/></td>
-                    <td><input type="button" value="Pesquisar" class="Botao1"
-                               onclick="validarPesquisauser()"></td>
-                </tr>
-            </table>
-        </form>
-
-
         <table id="tabela">
 
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>NOME</th>
                     <th>LOGIN</th>
                     <th>SENHA</th>
-                    
+                    <th>NOME</th>
 
                 </tr>
             </thead>
@@ -103,10 +90,9 @@
                 <% for (int i = 0; i < lista.size(); i++) {%>
                 <tr>
                     <td><%=lista.get(i).getId_user()%></td>
-                    <td><%=lista.get(i).getNome_user()%></td>
                     <td><%=lista.get(i).getLogin_user()%></td>
                     <td><%=lista.get(i).getSenha_user()%></td>
-                    
+                    <td><%=lista.get(i).getNome_user()%></td>
                     <td>
                         <a href="select_user?id=<%=lista.get(i).getId_user()%>" class="Botao1">Editar</a>
                     </td>
@@ -120,6 +106,5 @@
         <script src="layout/scripts/jquery.min.js"></script>
         <script src="layout/scripts/jquery.backtotop.js"></script>
         <script src="layout/scripts/jquery.mobilemenu.js"></script>
-        <script src="scripts/validador.js"></script>
     </body>
 </html>

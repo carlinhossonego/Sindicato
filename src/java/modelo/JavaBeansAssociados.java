@@ -20,7 +20,6 @@ public class JavaBeansAssociados {
     private String nome;
     private String nascimento;
     private String iddependentes;
-    private String controle;
 
     //VARIAVEIS DO BANCO CADASTRO DE EMPRESA   
     private String id_empresa;
@@ -30,18 +29,15 @@ public class JavaBeansAssociados {
     private String login_empresa;
     private String senha_empresa;
     private String cnpj_empresa;
-    private String id_do_associano;
-    private String id2;
-    private String id3;
 
-    //PEGAR DATA SERVER
-    private String data;
-
+    
+    
     //CONSTRUTOR
     public JavaBeansAssociados() {
         super();
     }
 
+ 
     public JavaBeansAssociados(String id_associado, String nome_associado, String empresa_associado, String validade_associado) {
         super();
         this.id_associado = id_associado;
@@ -50,15 +46,11 @@ public class JavaBeansAssociados {
         this.validade_associado = validade_associado;
     }
 
-    public JavaBeansAssociados(String iddependentes, String id_do_associano, String nome, String nascimento, String id2, String id3) {
+    public JavaBeansAssociados(String iddependentes, String nome, String nascimento) {
         super();
         this.iddependentes = iddependentes;
-        this.id_do_associano = id_do_associano;
         this.nome = nome;
         this.nascimento = nascimento;
-        this.id2 = id2;
-        this.id3 = id3;
-
     }
 
     public JavaBeansAssociados(String id_empresa, String nome_empresa, String endereco_empresa, String cnpj_empresa, String telefone_empresa) {
@@ -82,20 +74,6 @@ public class JavaBeansAssociados {
      */
     public void setId_associado(String id_associado) {
         this.id_associado = id_associado;
-    }
-
-    /**
-     * @return the id_associado
-     */
-    public String id_do_associano() {
-        return getId_associado();
-    }
-
-    /**
-     * @param id_associado the id_associado to set
-     */
-    public void id_do_associano(String id_associado) {
-        this.setId_associado(id_associado);
     }
 
     /**
@@ -362,76 +340,6 @@ public class JavaBeansAssociados {
      */
     public void setCnpj_empresa(String cnpj_empresa) {
         this.cnpj_empresa = cnpj_empresa;
-    }
-
-    /**
-     * @return the data
-     */
-    public String getData() {
-        return data;
-    }
-
-    /**
-     * @param data the data to set
-     */
-    public void setData(String data) {
-        this.data = data;
-    }
-
-    /**
-     * @return the id_do_associano
-     */
-    public String getId_do_associano() {
-        return id_do_associano;
-    }
-
-    /**
-     * @param id_do_associano the id_do_associano to set
-     */
-    public void setId_do_associano(String id_do_associano) {
-        this.id_do_associano = id_do_associano;
-    }
-
-    /**
-     * @return the id2
-     */
-    public String getId2() {
-        return id2;
-    }
-
-    /**
-     * @param id2 the id2 to set
-     */
-    public void setId2(String id2) {
-        this.id2 = id2;
-    }
-
-    /**
-     * @return the id3
-     */
-    public String getId3() {
-        return id3;
-    }
-
-    /**
-     * @param id3 the id3 to set
-     */
-    public void setId3(String id3) {
-        this.id3 = id3;
-    }
-
-    /**
-     * @return the controle
-     */
-    public String getControle() {
-        return controle;
-    }
-
-    /**
-     * @param controle the controle to set
-     */
-    public void setControle(String controle) {
-        this.controle = controle;
     }
 
 }

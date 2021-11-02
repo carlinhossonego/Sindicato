@@ -68,7 +68,7 @@
                                 <li><a href="novousuario">Listar</a></li>
                             </ul>
                         </li>
-                        <li><a href="relatoriosroot">Relatórios</a>
+                        <li><a href="#">Relatórios</a>
                         </li>
                         <li><a href="index.html">Sair</a>
                         </li>

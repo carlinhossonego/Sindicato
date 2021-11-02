@@ -66,7 +66,7 @@
                                 <li><a href="novousuario">Listar</a></li>
                             </ul>
                         </li>
-                        <li><a href="relatoriosroot">Relatórios</a>
+                        <li><a href="#">Relatórios</a>
                         </li>
                         <li><a href="index.html">Sair</a>
                         </li>
@@ -74,16 +74,6 @@
                 </nav>
             </header>
         </div>
-        <form name="frmPesquisaempresa" action="pesquisaparaempresa">
-            <table borde="1">
-                <tr>
-                    <td><input name="pesquisar" type="text" placeholder="Digite o Nome da Empresa" class="Caixa_Contato"/></td>
-                    <td><input type="button" value="Pesquisar" class="Botao1"
-                               onclick="validarPesquisaempresa()"></td>
-                </tr>
-            </table>
-        </form>
-
         <table id="tabela">
 
             <thead>

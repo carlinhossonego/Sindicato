@@ -68,7 +68,7 @@
                                 <li><a href="novousuario">Listar</a></li>
                             </ul>
                         </li>
-                        <li><a href="relatoriosroot">Relatórios</a>
+                        <li><a href="#">Relatórios</a>
                         </li>
                         <li><a href="index.html">Sair</a>
                         </li>
@@ -81,15 +81,15 @@
             <table>
 
                 <tr>
-                    
-                    <td hidden> <input type="text" name="id" class="Caixa_Id" readonly 
+                    <td>ID: </td>
+                    <td> <input type="text" name="id" class="Caixa_Id" readonly 
                                 value="<%out.print(request.getAttribute("id"));%>"></td>
 
                 </tr>
 
                 <tr>
-                    <td>NOME*: </td>
-                    <td> <input type="text" name="nome" id="nome" class="Caixa_Nome"
+                    <td>NOME: </td>
+                    <td> <input type="text" name="nome" class="Caixa_Nome"
                                 value="<%out.print(request.getAttribute("nome"));%>"></td>
 
                 </tr>
@@ -109,15 +109,15 @@
                 </tr>
 
                 <tr>
-                    <td>LOGIN*: </td>
-                    <td> <input type="text" name="login" id="login" class="Caixa_CPF"
+                    <td>LOGIN: </td>
+                    <td> <input type="text" name="login" class="Caixa_CPF"
                                 value="<%out.print(request.getAttribute("login"));%>"></td>
 
                 </tr>
 
                 <tr>
-                    <td>SENHA*: </td>
-                    <td> <input type="text" name="senha" id="senha" class="Caixa_CPF"
+                    <td>SENHA: </td>
+                    <td> <input type="text" name="senha" class="Caixa_CPF"
                                 value="<%out.print(request.getAttribute("senha"));%>"></td>
 
                 </tr>

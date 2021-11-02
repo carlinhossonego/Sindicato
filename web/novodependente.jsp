@@ -69,7 +69,7 @@
                                 <li><a href="novousuario">Listar</a></li>
                             </ul>
                         </li>
-                        <li><a href="relatoriosroot">Relatórios</a>
+                        <li><a href="#">Relatórios</a>
                         </li>
                         <li><a href="index.html">Sair</a>
                         </li>
@@ -107,18 +107,18 @@
                
                 <tr>
                     <td>ID</td>
-                    <td><input name="id" type="text" placeholder="ID" class="Caixa_ID1"  readonly
+                    <td><input name="id" type="text" placeholder="ID" class="Caixa_ID1"  
                                value="<%out.print(request.getAttribute("id"));%>">  </td>
                 </tr>
 
                 <tr>
-                    <td>NOME*</td>
-                    <td><input name="nome" id="nome" type="text" placeholder="NOME" class="Caixa_Cidade"/></td>
+                    <td>NOME</td>
+                    <td><input name="nome" type="text" placeholder="NOME" class="Caixa_Cidade"/></td>
                 </tr>
 
                 <tr>
-                    <td>DATA DE NASCIMENTO*</td>
-                    <td><input name="nascimento" id="nascimento" type="date" placeholder="NASCIMENTO" class="Caixa_Contato"/></td>
+                    <td>DATA DE NASCIMENTO</td>
+                    <td><input name="nascimento" type="text" placeholder="NASCIMENTO" class="Caixa_Contato"/></td>
                 </tr>
 
 

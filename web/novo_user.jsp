@@ -69,7 +69,7 @@
                                 <li><a href="novousuario">Listar</a></li>
                             </ul>
                         </li>
-                        <li><a href="relatoriosroot">Relatórios</a>
+                        <li><a href="#">Relatórios</a>
                         </li>
                         <li><a href="index.html">Sair</a>
                         </li>
@@ -85,33 +85,33 @@
 
             <table>
                 <tr>
-                    <td>NOME*:</td>
-                    <td><input name="nome" id="nome" type="text" placeholder="NOME" class="Caixa_Cidade"/></td>
+                    <td>NOME:</td>
+                    <td><input name="nome" type="text" placeholder="NOME" class="Caixa_Cidade"/></td>
                 </tr>
 
                 <tr>
-                    <td>LOGIN*:</td>
-                    <td><input name="login" id="login" type="text"  placeholder="LOGIN" class="Caixa_Contato"/></td>
+                    <td>LOGIN:</td>
+                    <td><input name="login" type="text"  placeholder="LOGIN" class="Caixa_Contato"/></td>
                 </tr>
 
                 <tr>
-                    <td>SENHA*:</td>
-                    <td><input name="senha" id="senha" type="text"  placeholder="SENHA" class="Caixa_Contato"/></td>
+                    <td>SENHA:</td>
+                    <td><input name="senha" type="text"  placeholder="SENHA" class="Caixa_Contato"/></td>
                 </tr>
 
             </table>
             <p>&nbsp;</p>
             <p>&nbsp;</p>
 
-        </form>
-        <input type="button" value="Cadastrar" class="Botao1"
-               onclick="validarUser()">
 
-        <!-- JAVASCRIPTS -->
-        <script src="layout/scripts/jquery.min.js"></script>
-        <script src="layout/scripts/jquery.backtotop.js"></script>
-        <script src="layout/scripts/jquery.mobilemenu.js"></script>
-        <script src="scripts/validador.js"></script> 
+            <input type="button" value="Cadastrar" class="Botao1"
+                   onclick="validarUser()">
+
+            <!-- JAVASCRIPTS -->
+            <script src="layout/scripts/jquery.min.js"></script>
+            <script src="layout/scripts/jquery.backtotop.js"></script>
+            <script src="layout/scripts/jquery.mobilemenu.js"></script>
+            <script src="scripts/validador.js"></script> 
     </body>
 </html>
 

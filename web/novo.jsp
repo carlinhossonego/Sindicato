@@ -69,7 +69,7 @@
                                 <li><a href="novousuario">Listar</a></li>
                             </ul>
                         </li>
-                        <li><a href="relatoriosroot">Relatórios</a>
+                        <li><a href="#">Relatórios</a>
                         </li>
                         <li><a href="index.html">Sair</a>
                         </li>
@@ -81,13 +81,12 @@
         <br>
         <form name="frmContato" action="insert_associado">
 
-            <input type="hidden" name="controle" id="controle" value="0">
 
 
             <table class="tabela">
                 <tr>
-                    
-                    <td hidden><input name="id" type="text" placeholder="ID" class="Caixa_ID" readonly
+                    <td>ID</td>
+                    <td><input name="id" type="text" placeholder="ID" class="Caixa_ID1"  
                                value="<%out.print(request.getAttribute("id"));%>">  </td>
                 </tr>
 
@@ -101,10 +100,13 @@
                     <td><input name="endereco" type="text" placeholder="ENDEREÇO" class="Caixa_Contato"/></td>
                 </tr>
 
-
                 <tr>
-                    <td>NOME*</td>
-                    <td><input type="text" id="nome" name="nome" placeholder="NOME" class="Caixa_Nome" /></td>
+                    <td>DEPENDENTES</td>
+                    <td> <input name="dependentes" type="text" placeholder="QUANTIDADE DE DEPENDENTES" class="Caixa_Contato"/></td>
+                </tr>
+                <tr>
+                    <td>NOME</td>
+                    <td><input type="text" name="nome" placeholder="NOME" class="Caixa_Nome" /></td>
                 </tr>
 
                 <tr>
@@ -122,8 +124,8 @@
                     <td> <input type="text" name="empresa" placeholder="EMPRESA" class="Caixa_Contato"/></td>
                 </tr>
                 <tr>
-                    <td>VALIDADE*</td>
-                    <td><input type="date" id="validade" name="validade" placeholder="VALIDADE" class="Caixa_Validade" /></td>
+                    <td>VALIDADE</td>
+                    <td><input type="text" name="validade" placeholder="VALIDADE" class="Caixa_Validade" /></td>
                 </tr>
             </table>
 
@@ -131,8 +133,6 @@
             <input type="button" value="CADASTRAR" class="Botao1"
                    onclick="validar()">    
         </form>
-
-      
 
         <!-- JAVASCRIPTS -->
         <script src="layout/scripts/jquery.min.js"></script>

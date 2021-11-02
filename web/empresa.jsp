@@ -67,7 +67,7 @@
                                 <li><a href="novousuario">Listar</a></li>
                             </ul>
                         </li>
-                        <li><a href="relatoriosroot">Relatórios</a>
+                        <li><a href="#">Relatórios</a>
                         </li>
                         <li><a href="index.html">Sair</a>
                         </li>
@@ -83,8 +83,8 @@
 
             <table>
                 <tr>
-                    <td>EMPRESA*</td>
-                    <td><input name="nome" id="nome" type="text" placeholder="EMPRESA" class="Caixa_Cidade"/></td>
+                    <td>EMPRESA</td>
+                    <td><input name="nome" type="text" placeholder="EMPRESA" class="Caixa_Cidade"/></td>
                 </tr>
                 <tr>
                     <td>ENDEREÇO</td>
@@ -96,12 +96,12 @@
                     <td><input name="contato" type="text" placeholder="CONTATO" class="Caixa_Contato"/></td>
                 </tr>
                 <tr>
-                    <td>LOGIN*</td>
-                    <td><input type="text" name="login" id="login" placeholder="LOGIN" class="Caixa_Nome" /></td>
+                    <td>LOGIN</td>
+                    <td><input type="text" name="login" placeholder="LOGIN" class="Caixa_Nome" /></td>
                 </tr>
                 <tr>
-                    <td>SENHA*</td>
-                    <td><input name="senha" type="text" id="senha" placeholder="SENHA" class="Caixa_Contato"/></td>
+                    <td>SENHA</td>
+                    <td><input name="senha" type="text" placeholder="SENHA" class="Caixa_Contato"/></td>
 
                 </tr>
                 <tr>

@@ -1,5 +1,3 @@
-<%@page import="java.time.LocalDate"%>
-<%@page import="java.time.format.DateTimeFormatter"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="modelo.JavaBeansAssociados"%>
 <%@page import="java.util.ArrayList" %>
@@ -73,7 +71,7 @@
                                 <li><a href="novousuario">Listar</a></li>
                             </ul>
                         </li>
-                        <li><a href="relatoriosroot">Relatórios</a>
+                        <li><a href="#">Relatórios</a>
                         </li>
                         <li><a href="index.html">Sair</a>
                         </li>
@@ -83,22 +81,21 @@
         </div>
 
 
-        <form name="frmeditarContato" action="update_associado">
+        <form name="frmContato" action="update_associado">
 
             <table>
 
                 <tr>
-
-                    <td hidden> <input type="text" name="id" class="Caixa_Id" readonly 
-                                       value="<%out.print(request.getAttribute("id"));%>"></td>
+                    <td>ID: </td>
+                    <td> <input type="text" name="id" class="Caixa_Id" readonly 
+                                value="<%out.print(request.getAttribute("id"));%>"></td>
 
                 </tr>
 
                 <tr>
-                    <td>NOME*: </td>
-                    <td> <input type="text" name="nome" id="nome" class="Caixa_Nome"
+                    <td>NOME: </td>
+                    <td> <input type="text" name="nome" class="Caixa_Nome"
                                 value="<%out.print(request.getAttribute("nome"));%>"></td>
-                    <td><img src="imagens/LOGO_p.png"></td>
 
                 </tr>
 
@@ -131,14 +128,9 @@
                 </tr>
 
                 <tr>
-                    <td>VALIDADE*: </td>
-                    <td> <input type="date" name="validade" id="validade" class="Caixa_CPF"
-                                value="<%
-                                    String data;
-                                    data = String.valueOf(request.getAttribute("validade"));
-                                    DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-                                    LocalDate Data_do_corte2 = LocalDate.parse(data, formato);
-                                    out.print(Data_do_corte2);%>"></td>
+                    <td>VALIDADE: </td>
+                    <td> <input type="text" name="validade" class="Caixa_CPF"
+                                value="<%out.print(request.getAttribute("validade"));%>"></td>
 
                 </tr>
                 <tr>
@@ -153,7 +145,7 @@
                         <table id="tabela">
                             <thead>
                                 <tr>
-
+                                   
                                     <th>NOME</th>
                                     <th>NASCIMENTO</th>
                                 </tr>
@@ -162,14 +154,13 @@
                             <tbody>
                                 <% for (int i = 0; i < lista.size(); i++) {%>
                                 <tr>
-
-
+                                    
+                                    
                                     <td><%=lista.get(i).getNome()%></td>
                                     <td><%=lista.get(i).getNascimento()%></td>
                                     <td>
                                         <a href="select_dependente?id=<%=lista.get(i).getIddependentes()%>" class="Botao1">Editar</a>
                                     </td>
-
                                 </tr>
                                 <% }%>
                             </tbody>
@@ -186,7 +177,7 @@
             <br>
 
             <input type="button" value="Salvar" class="Botao1"
-                   onclick="validareditar()">
+                   onclick="validar()">
         </form>
 
         <!-- JAVASCRIPTS -->
